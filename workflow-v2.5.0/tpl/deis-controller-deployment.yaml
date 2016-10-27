@@ -56,11 +56,6 @@ spec:
 {{- end}}
 {{- end}}
           env:
-            # NOTE(bacongobbler): use deis/registry-proxy to work around Docker --insecure-registry requirements
-            - name: "DEIS_REGISTRY_SERVICE_HOST"
-              value: "localhost"
-            - name: "DEIS_REGISTRY_SERVICE_PORT"
-              value: "{{.registry_proxy.hostPort}}"
             - name: SLUG_RUNNER_IMAGE_PULL_POLICY
               value: {{ .slugrunner.pullPolicy }}
             - name: "APP_STORAGE"
